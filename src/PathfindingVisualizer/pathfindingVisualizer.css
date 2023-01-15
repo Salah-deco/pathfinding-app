@@ -1,3 +1,107 @@
 .grid {
     margin: 20px 0 0 0;
 }
+
+.algorithm-button {
+    margin: 0 0 0 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(175, 216, 248);
+    background-color: rgb(73, 71, 194);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.algorithm-button:hover {
+    background-color: rgb(12, 8, 88);
+}
+
+.algorithm-button:disabled {
+    background-color: rgb(140, 138, 176);
+    cursor: not-allowed;
+}
+
+/*
+    add text to the disabled button
+    told "The algorithm will be added soon"
+    */
+.algorithm-button:disabled:hover::after {
+    content: "The algorithm will be added soon";
+    font-size: 10px;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    margin: 0 0 0 20px;
+}
+
+.square {
+    display: inline-block;
+    width: 20px;
+    height: 20px;    
+    border: 1px solid rgb(175, 216, 248);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin: 0 10px ;
+}
+
+.start-node {
+    background-color: rgb(0, 255, 0);
+}
+
+.finish-node {
+    background-color: rgb(255, 0, 0);
+}
+
+.shortest-path-node {
+    background-color: rgb(255, 255, 0);
+}
+
+.unvisited-node {
+    background-color: rgb(255, 255, 255);
+}
+
+.visited-node {
+    background-color: rgba(0, 190, 218, 0.75);
+}
+
+.wall-node {
+    background-color: rgb(12, 53, 71);
+}
+
+.map-key {
+    width: auto;
+    background-color: #eee;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+    padding: 20px 10px;
+    margin: 30px 0 0 0;
+}
+.map-key span {
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px;
+}
+.map-key::before {
+    content: "Map Key: ";
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    margin: 0 0 10px 0;
+}
+
+.map-key p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #444;
+    margin: 0 0 20px 0;
+    display: block;
+}

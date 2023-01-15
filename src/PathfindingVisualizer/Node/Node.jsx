@@ -2,11 +2,20 @@ import React from 'react'
 
 import './node.css'
 
-export default function Node({isStart, isFinish}) {
-    const extraClassName = isFinish ? 'node-finish' : isStart ? 'node-start' : '';
+export default function Node({col, row, isStart, isFinish, isWall, onMouseDown, onMouseEnter, onMouseUp}) {
+    const extraClassName = 
+    isFinish ? 'node-finish' : 
+    isStart ? 'node-start' : 
+    isWall ? 'node-wall' : '';
 
   return (
-    <div className={`node ${extraClassName}`}></div>
+    <div 
+      id={`node-${row}-${col}`}
+      className={`node ${extraClassName}`}
+      onMouseDown={() => onMouseDown(row, col)}
+      onMouseEnter={() => onMouseEnter(row, col)}
+      onMouseUp={() => onMouseUp()}
+      ></div>
   )
 }
 
