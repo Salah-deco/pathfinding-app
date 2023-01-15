@@ -6,10 +6,6 @@ import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra.js
 
 
 
-const startNodeRow = 8;
-const startNodeCol = 5;
-const finishNodeRow = 2;
-const finishNodeCol = 9;
 
 
 export default function PathfindingVisualizer() {
@@ -20,11 +16,19 @@ export default function PathfindingVisualizer() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
     console.log(windowWidth, windowHeight);
-    // numCols = windowWidth / 25
     // size of the grid depends on the width and height of the window
     const [numRows, setNumRows] = useState(Number.parseInt((windowHeight - 250) / 26));
     const [numCols, setNumCols] = useState(Number.parseInt(windowWidth / 26));
     
+    // start and finish nodes are randomly generated
+    const [startNodeRow, setStartNodeRow] = useState(Math.floor(Math.random() * numRows));
+    const [startNodeCol, setStartNodeCol] = useState(Math.floor(Math.random() * numCols));
+    const [finishNodeRow, setFinishNodeRow] = useState(Math.floor(Math.random() * numRows));
+    const [finishNodeCol, setFinishNodeCol] = useState(Math.floor(Math.random() * numCols));
+    
+    console.log(startNodeRow, startNodeCol, finishNodeRow, finishNodeCol);
+
+
     useEffect(() => {
         const grid = getInitialGrid();
         setGrid(grid);
